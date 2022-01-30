@@ -24,36 +24,60 @@
      	<h1>COVID-19 analyses</h1>
 
      	<!--Analyzes Antigen test results -->
-     	<div class="calc-antigen_test" id="antigen-test-analysis">
-    		<h2>1. Interpreting your antigen test results</h2>
-			<p>What does a positive or negative test actually tell you?
-			Learn about it <a href="https://youtu.be/QqgJHryKOSU" target="_blank">here.</a>
-			Then run the calculator to interpret the results of your Antigen test</p>
+     	<div class="calc-antigen_test" id="antigen-test-analysis" align='left'>
+    		<h3>1. Interpret your antigen test result</h3>
+
+			<hr>
+			<p>Step 1. Enter the prevalence of COVID-19 in your population</p>
+			<p>COVID-19 prevalence: <input type="text" class="prior"></input> %</p>
+
+
+			<hr>
+        	<p>Step 2. Select a test kit or manually enter the sensitivity and specificity of a test kit.</p>
+        	<div class="custom-select" align='center'>
+          	<select name="antigen-test-analysis" id="antigen-test-analysis">
+            	<option value="BinaxNOW" class="styled-option">BinaxNOW</option>
+            	<option value="iHealth" class="styled-option">iHealth</option>
+            	<option value="none" class="styled-option">none</option>
+          	</select>
+        	</div>
+			<table align='center'>
+				<tr>
+        		<td>Test sensitivity</td>
+				<td><input type="text" class="sensitivity"></input> %</td>
+				</tr>
+				<tr>
+				<td>Test specificity</td>
+				<td><input type="text" class="specificity"></input> %</td>
+				</tr>
+			</table>
+
+			<hr>
+			<p>Step 3. Perform the analysis and interpret the result</p>
+			<button class="btn-test">Analyze</button>
+			<table width=100% >
+				<tr>
+					<th>test result</th>
+					<th>interpretation</th>
+				</tr>
+				<tr>
+					<td>Positive</td>
+					<td><p class="positive-result results"></p></td>
+				</tr>
+				<tr>
+					<td>Negative</td>
+					<td><p class="negative-result results"></td>
+				</tr>
+			</table>
+			<p>What does a positive or negative test actually tell you? Learn what it all means <a href="https://youtu.be/QqgJHryKOSU" target="_blank">here.</a></p>
+
 
 		<!--
-        <p>Select a System of Measurement:</p>
-        <div class="custom-select">
-          <select name="antigen-test-analysis" id="antigen-test-analysis">
-            <option value="mi-min" class="styled-option">mi/min</option>
-            <option value="mi-hr" class="styled-option">mi/hr</option>
-            <option value="cm-sec" class="styled-option">cm/sec</option>
-            <option value="m-sec" class="styled-option">m/sec</option>
-            <option value="m-min" class="styled-option">m/min</option>
-            <option value="km-min" class="styled-option">km/min</option>
-            <option value="km-hr" class="styled-option">km/hr</option>
-          </select>
-        </div>
+        	<p class="positive-result results"></p>
+			<br>
+			<br>
+			<p class="negative-result results"></p>
 		-->
-        	<p>test sensitivity:<input type="text" class="sensitivity"></input> %</p>
-			<p>test specificity: <input type="text" class="specificity"></input> %</p>
-			<p>Prior: <input type="text" class="prior"></input> %</p>
-        	<br>
-        	<button class="btn-test">Analyze</button>
-        	<br>
-        	<p class="positive-result results">Positive test</p>
-			<br>
-			<br>
-			<p class="negative-result results">Negative test</p>
  		</div>
       	<p>Copyright &copy 2022 Fernando J. Pineda</p>
     </div>

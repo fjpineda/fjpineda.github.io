@@ -25,7 +25,7 @@ body {
 }
 
 button {
-  background-color: #DDD;
+  background-color: #10e715;
   color: #555;
   padding: 5px 12px;
   display: inline-block;
@@ -68,12 +68,30 @@ input {
 
 input,
 select {
-  border-radius: .75em;
+  border-radius: 0em;
   padding: .25em;
+}
+
+input[type="text"]{
+	width: 3em;
+	font-size: 12px;
 }
 
 select {
   border-width: 0;
+}
+
+table {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+td {
+	border: 1px solid black;
+	border-collapse: collapse;
 }
 
 /*Class Selections*/
@@ -82,8 +100,8 @@ select {
   display: inline;
   padding: .45em;
   /* border-radius: 1em; */
-  border-radius: 1em;
-  background-color: #477;
+  border-radius: 0.1em;
+ /* background-color: #477; */
 }
 
 /*Focus and Hover*/
@@ -143,7 +161,7 @@ select:focus {
 }
 
 .main-content {
-  margin-left: 225px;
+  /* margin-left: 225px; */
 }
 
 h2 a {
@@ -172,6 +190,6 @@ h2 a {
   }
 
   .main-content {
-    margin-left: 175px;
+    /* margin-left: 175px; */
   }
 }

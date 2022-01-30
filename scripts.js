@@ -2,20 +2,35 @@
 //copyright 2019 levi barshinger
 //DO NOT DELETE
 
+// function for testing if valid percentage
+function validPercentage(value) {
+	if(isNaN(value)) {
+		return false;
+	}
+	else if(value < 0){
+		return false;
+	}
+	else if(100 < value){
+		return false;
+	}
+	else {
+		return value;
+	}
+}
 
-//Calculates Speed
+// interpret antigen test result
 document.getElementsByClassName('btn-test')[0].addEventListener('click', () => {
 
  	sensitivity = document.getElementsByClassName('sensitivity')[0].value;
  	specificity = document.getElementsByClassName('specificity')[0].value;
  	prior       = document.getElementsByClassName('prior')[0].value;
 
- 	if (isNaN(sensitivity)) {
-		alert('Enter a valid percentage for sensitivity.');
-	} else if (isNaN(specificity)) {
-		alert('Enter a valid percentage for specificity.');
-	} else if (isNaN(prior)) {
-		alert('Enter a valid percentage for the prior.');
+ 	if (!validPercentage(sensitivity)) {
+		alert("Enter a valid percentage value for 'test sensitivity'");
+	} else if (!validPercentage(specificity)) {
+		alert("Enter a valid percentage value for 'test specificity'");
+	} else if (!validPercentage(prior)) {
+		alert("Enter a valid percentage value for 'disease prevalence'");
  	} else {
 
 		var P = {};
@@ -37,10 +52,11 @@ document.getElementsByClassName('btn-test')[0].addEventListener('click', () => {
 		P['infected | +test'] = P['+test & infected']/P['+test'];
 		P['infected | -test'] = P['-test & infected']/P['-test'];
 
-		console.log(P)
+		positive_result = P['infected | +test'] *100;
+		negative_result = P['infected | -test'] *100;
 
-    	document.getElementsByClassName('positive-result')[0].innerHTML = 'Positive test means ' +   P['infected | +test'] *100 + '% chance that subject is actually infected';
-		document.getElementsByClassName('negative-result')[0].innerHTML = 'Negative test means ' + P['infected | -test']*100 +'% chance that subject is actually infected';
+    	document.getElementsByClassName('positive-result')[0].innerHTML = positive_result.toFixed(0) + '% chance that you are actually infected';
+		document.getElementsByClassName('negative-result')[0].innerHTML = negative_result.toFixed(0) + '% chance that you are actually infected';
 
 	}
 });
