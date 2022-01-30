@@ -11,6 +11,7 @@
   </head>
 
   <body>
+	<!--
     <header>
       <div class="sidenav">
         <h2 class="menu-title"><a href="#main-content">COVID-19 Analyses</a></h2>
@@ -18,14 +19,14 @@
         <a href="#calc-group_size_analysis" class="nav-item">Group size analysis</a>
       </div>
     </header>
-
+	-->
     <div class="main-content" id="main-content">
-      <h1>COVID-19 analyses</h1>
+     	<h1>COVID-19 analyses</h1>
 
-      <!--Analyzes Antigen test results -->
-      <div class="calc-antigen_test" id="calc-antigen_test">
-        <h2>Interpret antigen test</h2>
-<!--
+     	<!--Analyzes Antigen test results -->
+     	<div class="calc-antigen_test" id="speed-measurement">
+    		<h2>Interpreting antigen test results</h2>
+		<!--
         <p>Select a System of Measurement:</p>
         <div class="custom-select">
           <select name="speed-measurement" id="speed-measurement">
@@ -38,58 +39,20 @@
             <option value="km-hr" class="styled-option">km/hr</option>
           </select>
         </div>
--->
-        <p>Sensitivity (%):
-        <input type="text" class="distance-for-speed"></input>
-		</p>
-		<p>Specificity (%):
-		<input type="text" class="speed-time"></input>
-		</p>
-		<p>Prior (%):
-		<input type="text" class="prior_infected"></input>
-		</p>
-        <br>
-        <button class="btn-speed">Analyze</button>
-        <br>
-        <p class="speed-result results">Speed:</p>
-      </div>
-
-      <!--Calculates Acceleration-->
-      <div class="calc-group_size_analysis" id="calc-group_size_analysis">
-        <h2>Calculate Acceleration</h2>
-        <p>Select a System of Measurement:</p>
-        <div class="custom-select">
-          <select name="acceleration-measurement" id="acceleration-measurement">
-            <option value="mi-min2" class="styled-option">mi/min&sup2</option>
-            <option value="mi-hr2" class="styled-option">mi/hr&sup2</option>
-            <option value="cm-sec2" class="styled-option">cm/sec&sup2</option>
-            <option value="m-sec2" class="styled-option">m/sec&sup2</option>
-            <option value="m-min2" class="styled-option">m/min&sup2</option>
-            <option value="km-min2" class="styled-option">km/min&sup2</option>
-            <option value="km-hr2">km/hr&sup2</option>
-          </select>
-        </div>
-        <p>Initial Velocity (in miles per minute):</p>
-        <input type="text" class="initial-v"></input>
-        <br>
-        <br>
-        <br>
-        <p>Final Velocity (in miles per minute):</p>
-        <input type="text" class="final-v"></input>
-        <br>
-        <br>
-        <br>
-        <p>Time (in minutes):</p>
-        <input type="text" class="acceleration-time"></input>
-        <br>
-        <br>
-        <br>
-        <button class="btn-acceleration">Calculate Acceleration</button>
-        <br>
-        <p class="acceleration-result results">Acceleration:</p>
-      </div>
-
-      <p>Copyright &copy 2021 Fernando J Pineda/p>
+		-->
+        	<p>test sensitivity:<input type="text" class="sensitivity"></input> %</p>
+			<p>test specificity: <input type="text" class="specificity"></input> %</p>
+			<p>Prior: <input type="text" class="prior"></input> %</p>
+        	<br>
+        	<button class="btn-test">Analyze</button>
+        	<br>
+        	<p class="positive-result results">Positive test</p>
+			<br>
+			<br>
+			<p class="negative-result results">Negative test</p>
+ 		</div>
+		Learn more about test interpretation <a href="https://youtu.be/QqgJHryKOSU" target="_blank">here.</a>
+      	<p>Copyright &copy 2022 Fernando J. Pineda</p>
     </div>
   </body>
   <script src="scripts.js"></script>
