@@ -28,27 +28,44 @@
     		<h3>1. Interpret your antigen test result</h3>
 
 			<hr>
-			<p>Step 1. Enter the prevalence of COVID-19 in your population</p>
+			<p>Step 1. Enter an estimate of the prevalence of COVID-19 in your community. For technical reasons no one knows this number.
+				The best we have is the so-called positivity rate, which over-estimates the prevalence.
+				The positivity rate for your community can be found at this <a href=>CDC web site</a>. Enter your
+				state and county (or metro area) and enter the "% Positivity" value that you get. </p>
 			<p>COVID-19 prevalence: <input type="text" class="prior"></input> %</p>
 
 
 			<hr>
-        	<p>Step 2. Select a test kit or manually enter the sensitivity and specificity of a test kit.</p>
-        	<div class="custom-select" align='center'>
-          	<select name="antigen-test-analysis" id="antigen-test-analysis">
-            	<option value="BinaxNOW" class="styled-option">BinaxNOW</option>
-            	<option value="iHealth" class="styled-option">iHealth</option>
-            	<option value="none" class="styled-option">none</option>
-          	</select>
-        	</div>
+
+			<!--<select name="antigen-test-analysis" id="antigen-tests_kits" onchange=setTest()> -->
+
+        	<p>Step 2. Select a test kit from the pulldown menu or if your test kit is not a menu option enter the sensitivity and specificity
+			values manually. Look up the values <a href="https://www.centerforhealthsecurity.org/covid-19TestingToolkit/molecular-based-tests/current-molecular-and-antigen-tests.html">here</a>. </p>
+
 			<table align='center'>
 				<tr>
+					<td>Test kit</td>
+					<td>
+						<select name="antigen-test-analysis" id="antigen-tests-kits" onchange=setTest()>
+							<option value="other" class="styled-option">select antigen test kit</option>
+							<option value="BinaxNOW (no symptoms)" class="styled-option">BinaxNOW (no symptoms)</option>
+							<option value="BinaxNOW (with symptoms)" class="styled-option">BinaxNOW (with symptoms)</option>
+							<option value="Flowflex" class="styled-option">Flowflex</option>
+							<option value="iHealth" class="styled-option">iHealth</option>
+		          		</select>
+					</td>
+				</tr>
+				<tr>
         		<td>Test sensitivity</td>
-				<td><input type="text" class="sensitivity"></input> %</td>
+				<td><input type="text" class="sensitivity" id="sensitivity"></input> %</td>
 				</tr>
 				<tr>
 				<td>Test specificity</td>
-				<td><input type="text" class="specificity"></input> %</td>
+				<td><input type="text" class="specificity" id="specificity"></input> %</td>
+				</tr>
+				<tr>
+				<td>Notes</td>
+				<td>TBD</td>
 				</tr>
 			</table>
 
@@ -67,6 +84,10 @@
 				<tr>
 					<td>Negative</td>
 					<td><p class="negative-result results"></td>
+				</tr>
+				<tr>
+					<td>Comments</td>
+					<td><p class="comments"></td>
 				</tr>
 			</table>
 			<p>What does a positive or negative test actually tell you? Learn what it all means <a href="https://youtu.be/QqgJHryKOSU" target="_blank">here.</a></p>

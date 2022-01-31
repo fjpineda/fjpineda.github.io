@@ -18,6 +18,42 @@ function validPercentage(value) {
 	}
 }
 
+function setTest(){
+
+	var sensitivities={
+		'none': "enter value",
+		'BinaxNOW (no symptoms)': 35.8,
+		'BinaxNOW (with symptoms)': 71.1,
+		'Flowflex': 93.0,
+		'iHealth' : 94.30
+	}
+
+	var specificities={
+		'none': "enter a value",
+		'BinaxNOW (no symptoms)': 99.8,
+		'BinaxNOW (with symptoms)': 100,
+		'Flowflex':100,
+		'iHealth' :98.1
+	}
+
+	//var notes={
+	//	'BinaxNOW':
+	//	'Flowflex':
+	//	'iHealth' :
+	//}
+
+	dropdown = document.getElementById("antigen-tests-kits");
+	selection = dropdown.value;
+	console.log("selection = " + selection);
+	console.log("sensitivity = " + sensitivities[selection]);
+	sensitivityObj = document.getElementById("sensitivity");
+	sensitivityObj.value = sensitivities[selection];
+
+	specificityObj = document.getElementById("specificity");
+	specificityObj.value = specificities[selection];
+
+}
+
 // interpret antigen test result
 document.getElementsByClassName('btn-test')[0].addEventListener('click', () => {
 
