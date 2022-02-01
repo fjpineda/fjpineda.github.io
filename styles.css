@@ -95,7 +95,6 @@ td {
 }
 
 /*Class Selections*/
-
 .results {
   display: inline;
   padding: .45em;
@@ -192,4 +191,74 @@ h2 a {
   .main-content {
     /* margin-left: 175px; */
   }
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 600px) {
+    a::after {
+        display: none;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+@media (min-width: 800px) {
+    .blob {
+        width: 12vw;
+        height: 12vw;
+    }
+    .blob > p {
+        font-size: 1.5vw;
+    }
+    .content {
+        margin: auto;
+    }
+    .description,
+    .links {
+        width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (min-width: 1000px) {
+    .blobs {
+        margin-bottom: 6vw;
+    }
+    .blob {
+        width: 8vw;
+        height: 8vw;
+    }
+}
+
+@media (min-width: 1440px) {
+    .blob {
+        width: 6vw;
+        height: 6vw;
+    }
+}
+
+@media (min-width: 1280px) {
+    h1::before {
+        width: 80%;
+    }
+    .description,
+    .links {
+        width: 65%;
+    }
+}
+
+@media (min-width: 1600px) {
+    .blobs {
+        margin-bottom: 4vw;
+    }
+    h1::before {
+        width: 60%;
+    }
+    .description,
+    .links {
+        width: 45%;
+    }
 }
