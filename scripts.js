@@ -44,8 +44,8 @@ function setTest(){
 
 	dropdown = document.getElementById("antigen-tests-kits");
 	selection = dropdown.value;
-	console.log("selection = " + selection);
-	console.log("sensitivity = " + sensitivities[selection]);
+	//console.log("selection = " + selection);
+	//console.log("sensitivity = " + sensitivities[selection]);
 	sensitivityObj = document.getElementById("sensitivity");
 	sensitivityObj.value = sensitivities[selection];
 
