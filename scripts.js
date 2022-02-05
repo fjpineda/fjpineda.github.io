@@ -1,5 +1,5 @@
-//website for calculating speed and acceleration
-//copyright 2019 levi barshinger
+//javascript for for COVID-19 website
+//copyright 2022 Fernando J Pineda
 //DO NOT DELETE
 
 // function for testing if valid percentage
@@ -21,19 +21,59 @@ function validPercentage(value) {
 function setTest(){
 
 	var sensitivities={
-		'none': "enter value",
-		'BinaxNOW (no symptoms)': 35.8,
-		'BinaxNOW (with symptoms)': 71.1,
-		'Flowflex': 93.0,
-		'iHealth' : 94.30
+	"none" : "enter value",
+        "1" : 84.6,
+        "2" : 91.7,
+        "3" : 91.7,
+        "4" : 84.6,
+        "5" : 84,
+        "6" : 93.8,
+        "7" : 80.00,
+        "8" : 91.10,
+        "9" : 84.0,
+        "10" : 84.0,
+        "11" : 84.0,
+        "12" : 87.5,
+        "13" : 86.6,
+        "14" : 93.3,
+        "15" : 90,
+        "16" : 97,
+        "17" : 83.50,
+        "18" : 87.6,
+        "19" : 84.8,
+        "20" : 93.9,
+        "21" : 96.60,
+        "22" : 94.4,
+        "23" : 95.2,
+        "24" : 97.6,
 	}
 
 	var specificities={
-		'none': "enter a value",
-		'BinaxNOW (no symptoms)': 99.8,
-		'BinaxNOW (with symptoms)': 100,
-		'Flowflex':100,
-		'iHealth' :98.1
+	"none" : "enter value",
+        "1" : 98.5,
+        "2" : 100,
+        "3" : 100,
+        "4" : 98.5,
+        "5" : 100,
+        "6" : 99.3,
+        "7" : 100,
+        "8" : 100,
+        "9" : 98.0,
+        "10" : 98.0,
+        "11" : 98.0,
+        "12" : 98.9,
+        "13" : 100,
+        "14" : 99.0,
+        "15" : 100,
+        "16" : 100,
+        "17" : 99.20,
+        "18" : 99.5,
+        "19" : 99.1,
+        "20" : 100,
+        "21" : 99.30,
+        "22" : 100.0,
+        "23" : 100,
+        "24" : 96.6,
 	}
 
 	//var notes={
